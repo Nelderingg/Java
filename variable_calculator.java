@@ -4,18 +4,22 @@ import java.util.Scanner;
 public class variable_calculator{
     private static Hashtable<String, Integer> variables = new Hashtable<>();
     
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Scanner scanner = new Scanner(System.in);
         
-        while (scanner.hasNextLine()) {
+        while (scanner.hasNextLine())
+        {
             String line = scanner.nextLine().trim();
             
-            if (line.equals("QUIT")) {
+            if (line.equals("QUIT"))
+            {
                 // Quit the program
                 System.exit(0);
             }
             
-            if (!processInstruction(line)) {
+            if (!processInstruction(line))
+            {
                 // If there was an error in the instruction, print ERROR and exit the program
                 System.out.println("ERROR");
                 System.exit(0);
@@ -50,7 +54,7 @@ public class variable_calculator{
                 return true;
         }
         // If the instruction is of the form varnameL = varnameR1 operation varnameR2
-        else if (parts.length == 5 && parts[1].equals("=") && "+-*".contains(parts[3])) {
+        else if (parts.length == 5 && parts[1].equals("=")){
             String varnameR1 = parts[2];
             String operation = parts[3];
             String varnameR2 = parts[4];
@@ -77,6 +81,8 @@ public class variable_calculator{
                 case "*":
                     result = valueR1 * valueR2;
                     break;
+                case "/":
+                    result = valueR1 / valueR2;
                 default:
                     // Invalid operation
                     return false;
