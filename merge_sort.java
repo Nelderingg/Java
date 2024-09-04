@@ -100,7 +100,11 @@ public class merge_sort {
 
     public static void main(String[] args)
     {
+        System.out.println("Enter the number of integers to sort \n");
+
         Integer x = readInt();
+
+        System.out.println("Enter the numbers to sort seperated by spaces");
         
         Integer[] arr = readIntegerArray(x);
         
